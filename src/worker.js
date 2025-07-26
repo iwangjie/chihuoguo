@@ -805,7 +805,7 @@ const HotPotTable = {
         
         <!-- 座位 -->
         <div v-for="(seat, index) in seats" :key="index" 
-             :class="['seat', \`seat-\${index}\`, { occupied: seat.player }]">
+             :class="['seat', \`seat-${index}\`, { occupied: seat.player }]">
           <div v-if="seat.player" class="player-info">
             <div class="player-name">{{ seat.player.name }}</div>
             <div v-if="seat.player.message" class="chat-bubble">
