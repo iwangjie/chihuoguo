@@ -97,15 +97,45 @@ body {
   position: relative;
 }
 
-/* 火锅桌 */
+/* 火锅桌 - 超逼真木质桌面 */
 .hotpot-table {
   width: 100%;
   height: 100%;
   position: relative;
   background: 
-    radial-gradient(circle at 30% 70%, rgba(139,69,19,0.3) 0%, transparent 50%),
-    radial-gradient(circle at 70% 30%, rgba(160,82,45,0.2) 0%, transparent 50%),
-    linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
+    /* 木纹纹理层 */
+    repeating-linear-gradient(90deg, 
+      rgba(139,69,19,0.1) 0px, 
+      rgba(160,82,45,0.15) 2px, 
+      rgba(139,69,19,0.1) 4px,
+      rgba(101,67,33,0.12) 6px,
+      rgba(139,69,19,0.1) 8px),
+    repeating-linear-gradient(0deg, 
+      rgba(160,82,45,0.08) 0px, 
+      rgba(139,69,19,0.12) 1px, 
+      rgba(160,82,45,0.08) 2px),
+    
+    /* 木材年轮效果 */
+    radial-gradient(ellipse at 25% 25%, rgba(101,67,33,0.3) 0%, transparent 40%),
+    radial-gradient(ellipse at 75% 75%, rgba(139,69,19,0.25) 0%, transparent 35%),
+    radial-gradient(ellipse at 60% 40%, rgba(160,82,45,0.2) 0%, transparent 45%),
+    radial-gradient(ellipse at 40% 80%, rgba(80,50,25,0.3) 0%, transparent 30%),
+    
+    /* 木材光泽和阴影 */
+    radial-gradient(circle at 30% 70%, rgba(139,69,19,0.4) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(160,82,45,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(205,133,63,0.1) 0%, transparent 70%),
+    
+    /* 基础木色渐变 */
+    linear-gradient(135deg, 
+      #2c1810 0%, 
+      #3d2317 15%,
+      #2c1810 30%,
+      #1a0f08 45%,
+      #2c1810 60%,
+      #3d2317 75%,
+      #2c1810 90%,
+      #1a0f08 100%);
 }
 
 .table-container {
@@ -117,174 +147,223 @@ body {
   height: 600px;
 }
 
-/* 火锅 */
+/* 火锅 - 超逼真铸铁锅 */
 .hotpot {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  height: 220px;
+  width: 380px;
+  height: 260px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* 真实的铸铁锅边缘 - 厚重质感 */
-  border: 20px solid;
+  /* 超厚重的铸铁锅边缘 - 真实锅沿 */
+  border: 25px solid;
   border-image: linear-gradient(45deg, 
-    #1a1a1a 0%,     /* 深黑阴影 */
-    #2d2d2d 8%,     /* 铁色基调 */
-    #4a4a4a 16%,    /* 铁锈过渡 */
-    #654321 25%,    /* 铁锈色 */
-    #8B4513 40%,    /* 主体棕色 */
-    #A0522D 50%,    /* 中间亮部 */
-    #CD853F 60%,    /* 金属反光 */
-    #8B4513 75%,    /* 回到主体色 */
-    #654321 84%,    /* 边缘铁锈 */
-    #4a4a4a 92%,    /* 边缘阴影 */
-    #1a1a1a 100%    /* 深色收尾 */
+    #0d0d0d 0%,     /* 最深阴影 */
+    #1a1a1a 5%,     /* 深黑基调 */
+    #2d2d2d 12%,    /* 铁色过渡 */
+    #3a3a3a 18%,    /* 铁锈前奏 */
+    #4a4a4a 25%,    /* 铁锈过渡 */
+    #654321 35%,    /* 铁锈色 */
+    #8B4513 45%,    /* 主体棕色 */
+    #A0522D 50%,    /* 中间最亮部 */
+    #CD853F 55%,    /* 金属反光峰值 */
+    #A0522D 60%,    /* 回落亮部 */
+    #8B4513 70%,    /* 回到主体色 */
+    #654321 80%,    /* 边缘铁锈 */
+    #4a4a4a 88%,    /* 边缘过渡 */
+    #2d2d2d 94%,    /* 边缘阴影 */
+    #1a1a1a 98%,    /* 深黑收尾 */
+    #0d0d0d 100%    /* 最深收尾 */
   ) 1;
   
-  /* 超逼真的立体阴影系统 */
+  /* 极致逼真的立体阴影系统 */
   box-shadow: 
     /* 锅内深度层次 - 模拟真实深度 */
-    inset 0 0 50px rgba(0,0,0,0.9),
-    inset 0 -20px 40px rgba(0,0,0,0.7),
-    inset 0 20px 30px rgba(255,255,255,0.03),
-    inset 0 -8px 15px rgba(139,69,19,0.5),
+    inset 0 0 60px rgba(0,0,0,0.95),
+    inset 0 -25px 50px rgba(0,0,0,0.8),
+    inset 0 25px 35px rgba(255,255,255,0.04),
+    inset 0 -12px 20px rgba(139,69,19,0.6),
+    inset 0 12px 18px rgba(205,133,63,0.15),
     
-    /* 锅底厚重感 */
-    inset 0 -3px 8px rgba(0,0,0,0.8),
-    inset 0 3px 6px rgba(255,255,255,0.1),
+    /* 锅底超厚重感 */
+    inset 0 -5px 12px rgba(0,0,0,0.9),
+    inset 0 5px 10px rgba(255,255,255,0.12),
+    inset 0 -2px 6px rgba(101,67,33,0.4),
     
-    /* 桌面真实投影 */
-    0 25px 80px rgba(0,0,0,0.8),
-    0 15px 40px rgba(0,0,0,0.6),
-    0 8px 20px rgba(0,0,0,0.4),
+    /* 桌面真实投影系统 */
+    0 35px 120px rgba(0,0,0,0.9),
+    0 25px 60px rgba(0,0,0,0.7),
+    0 15px 30px rgba(0,0,0,0.5),
+    0 8px 15px rgba(0,0,0,0.3),
     
-    /* 金属质感光泽 */
-    0 -10px 25px rgba(255,255,255,0.06),
-    0 -5px 15px rgba(205,133,63,0.1),
+    /* 金属质感多层光泽 */
+    0 -15px 35px rgba(255,255,255,0.08),
+    0 -8px 20px rgba(205,133,63,0.15),
+    0 -4px 12px rgba(160,82,45,0.1),
     
-    /* 火光环境映射 */
-    0 0 100px rgba(255,100,0,0.3),
-    0 0 60px rgba(255,150,50,0.2),
-    0 0 30px rgba(255,200,100,0.1);
+    /* 火光环境映射增强 */
+    0 0 150px rgba(255,100,0,0.4),
+    0 0 80px rgba(255,150,50,0.3),
+    0 0 40px rgba(255,200,100,0.15),
+    0 0 20px rgba(255,220,150,0.1);
   
-  /* 铸铁锅表面纹理 */
+  /* 超逼真铸铁锅表面纹理 */
   background: 
-    /* 锅底使用痕迹 */
-    radial-gradient(ellipse at 15% 25%, rgba(160,82,45,0.4) 0%, transparent 35%),
-    radial-gradient(ellipse at 85% 75%, rgba(139,69,19,0.5) 0%, transparent 30%),
-    radial-gradient(ellipse at 60% 40%, rgba(101,67,33,0.3) 0%, transparent 45%),
+    /* 锅底深度使用痕迹 */
+    radial-gradient(ellipse at 12% 20%, rgba(160,82,45,0.5) 0%, transparent 30%),
+    radial-gradient(ellipse at 88% 80%, rgba(139,69,19,0.6) 0%, transparent 25%),
+    radial-gradient(ellipse at 65% 35%, rgba(101,67,33,0.4) 0%, transparent 40%),
+    radial-gradient(ellipse at 35% 75%, rgba(80,50,25,0.5) 0%, transparent 35%),
     
-    /* 金属氧化层 */
-    radial-gradient(ellipse at 30% 70%, rgba(205,133,63,0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 30%, rgba(160,82,45,0.3) 0%, transparent 40%),
+    /* 金属氧化层纹理 */
+    radial-gradient(ellipse at 25% 65%, rgba(205,133,63,0.25) 0%, transparent 45%),
+    radial-gradient(ellipse at 75% 25%, rgba(160,82,45,0.35) 0%, transparent 35%),
+    radial-gradient(ellipse at 50% 50%, rgba(139,69,19,0.2) 0%, transparent 60%),
     
-    /* 主体金属渐变 */
+    /* 铸造纹理细节 */
+    radial-gradient(circle at 20% 30%, rgba(101,67,33,0.3) 0%, transparent 15%),
+    radial-gradient(circle at 80% 70%, rgba(80,50,25,0.4) 0%, transparent 12%),
+    radial-gradient(circle at 60% 20%, rgba(139,69,19,0.25) 0%, transparent 18%),
+    
+    /* 主体金属渐变增强 */
     linear-gradient(135deg, 
-      rgba(80,50,25,0.6) 0%, 
-      rgba(101,67,33,0.5) 15%,
-      rgba(139,69,19,0.4) 35%,
-      rgba(160,82,45,0.3) 50%, 
-      rgba(139,69,19,0.4) 65%,
-      rgba(101,67,33,0.5) 85%,
-      rgba(80,50,25,0.6) 100%),
+      rgba(60,35,15,0.8) 0%, 
+      rgba(80,50,25,0.7) 10%,
+      rgba(101,67,33,0.6) 25%,
+      rgba(139,69,19,0.5) 40%,
+      rgba(160,82,45,0.4) 50%, 
+      rgba(139,69,19,0.5) 60%,
+      rgba(101,67,33,0.6) 75%,
+      rgba(80,50,25,0.7) 90%,
+      rgba(60,35,15,0.8) 100%),
     
-    /* 底色 */
-    #2c1810;
+    /* 深层底色 */
+    #1f0f08;
 }
 
 .hotpot:hover {
-  transform: translate(-50%, -50%) scale(1.03);
+  transform: translate(-50%, -50%) scale(1.05);
   
-  /* 悬停时的增强光效 */
+  /* 悬停时的超强光效 */
   box-shadow: 
-    /* 锅内深度增强 */
-    inset 0 0 60px rgba(0,0,0,0.95),
-    inset 0 -25px 50px rgba(0,0,0,0.8),
-    inset 0 25px 35px rgba(255,255,255,0.05),
-    inset 0 -10px 20px rgba(139,69,19,0.6),
-    inset 0 -5px 12px rgba(0,0,0,0.9),
-    inset 0 5px 8px rgba(255,255,255,0.15),
+    /* 锅内深度超级增强 */
+    inset 0 0 80px rgba(0,0,0,0.98),
+    inset 0 -35px 70px rgba(0,0,0,0.85),
+    inset 0 35px 45px rgba(255,255,255,0.08),
+    inset 0 -18px 30px rgba(139,69,19,0.8),
+    inset 0 18px 25px rgba(205,133,63,0.25),
+    inset 0 -8px 18px rgba(0,0,0,0.95),
+    inset 0 8px 15px rgba(255,255,255,0.2),
     
-    /* 桌面投影增强 */
-    0 30px 100px rgba(0,0,0,0.9),
-    0 20px 50px rgba(0,0,0,0.7),
-    0 12px 25px rgba(0,0,0,0.5),
+    /* 桌面投影超级增强 */
+    0 45px 150px rgba(0,0,0,0.95),
+    0 35px 80px rgba(0,0,0,0.8),
+    0 25px 40px rgba(0,0,0,0.6),
+    0 15px 20px rgba(0,0,0,0.4),
     
-    /* 金属光泽增强 */
-    0 -12px 30px rgba(255,255,255,0.08),
-    0 -8px 20px rgba(205,133,63,0.15),
+    /* 金属光泽超级增强 */
+    0 -20px 45px rgba(255,255,255,0.12),
+    0 -12px 30px rgba(205,133,63,0.25),
+    0 -6px 18px rgba(160,82,45,0.15),
     
-    /* 火光效果增强 */
-    0 0 120px rgba(255,100,0,0.4),
-    0 0 80px rgba(255,150,50,0.3),
-    0 0 40px rgba(255,200,100,0.2);
+    /* 火光效果超级增强 */
+    0 0 200px rgba(255,100,0,0.6),
+    0 0 120px rgba(255,150,50,0.4),
+    0 0 60px rgba(255,200,100,0.3),
+    0 0 30px rgba(255,220,150,0.2);
 }
 
-/* 锅中间的分隔线 - 真实的金属隔板 */
+/* 锅中间的分隔线 - 超逼真的厚重金属隔板 */
 .hotpot::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 6px;
-  height: 85%;
-  border-radius: 3px;
+  width: 8px;
+  height: 88%;
+  border-radius: 4px;
   z-index: 10;
   
-  /* 金属隔板质感 */
+  /* 厚重金属隔板质感 */
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgba(160,82,45,0.3) 5%,
-    #654321 15%,
-    #8B4513 25%,
-    #A0522D 40%,
+    rgba(80,50,25,0.2) 3%,
+    rgba(101,67,33,0.4) 8%,
+    rgba(139,69,19,0.6) 15%,
+    #654321 20%,
+    #8B4513 30%,
+    #A0522D 45%,
     #CD853F 50%,
-    #A0522D 60%,
-    #8B4513 75%,
+    #DEB887 52%,
+    #CD853F 55%,
+    #A0522D 70%,
+    #8B4513 80%,
     #654321 85%,
-    rgba(160,82,45,0.3) 95%,
+    rgba(139,69,19,0.6) 92%,
+    rgba(101,67,33,0.4) 97%,
     transparent 100%);
     
-  /* 立体金属效果 */
+  /* 超立体金属效果 */
   box-shadow: 
-    /* 主体阴影 */
-    -2px 0 4px rgba(0,0,0,0.6),
-    2px 0 4px rgba(0,0,0,0.6),
-    /* 金属光泽 */
-    -1px 0 2px rgba(255,255,255,0.15),
-    1px 0 2px rgba(255,255,255,0.15),
-    /* 深度感 */
-    0 0 8px rgba(0,0,0,0.4),
-    /* 内部阴影 */
-    inset -1px 0 2px rgba(0,0,0,0.3),
-    inset 1px 0 2px rgba(0,0,0,0.3);
+    /* 主体深度阴影 */
+    -3px 0 8px rgba(0,0,0,0.8),
+    3px 0 8px rgba(0,0,0,0.8),
+    -1px 0 4px rgba(0,0,0,0.6),
+    1px 0 4px rgba(0,0,0,0.6),
+    
+    /* 金属光泽系统 */
+    -2px 0 3px rgba(255,255,255,0.2),
+    2px 0 3px rgba(255,255,255,0.2),
+    -1px 0 2px rgba(205,133,63,0.3),
+    1px 0 2px rgba(205,133,63,0.3),
+    
+    /* 深度立体感 */
+    0 0 12px rgba(0,0,0,0.5),
+    0 2px 6px rgba(0,0,0,0.4),
+    0 -2px 6px rgba(255,255,255,0.1),
+    
+    /* 内部阴影增强 */
+    inset -2px 0 4px rgba(0,0,0,0.4),
+    inset 2px 0 4px rgba(0,0,0,0.4),
+    inset 0 2px 3px rgba(0,0,0,0.3),
+    inset 0 -2px 3px rgba(255,255,255,0.1);
 }
 
-/* 增加隔板的金属纹理 */
+/* 增加隔板的超逼真金属纹理和反光 */
 .hotpot::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 4px;
-  height: 75%;
-  border-radius: 2px;
+  width: 6px;
+  height: 80%;
+  border-radius: 3px;
   z-index: 11;
   
-  /* 金属表面反光 */
+  /* 金属表面超逼真反光 */
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgba(255,255,255,0.1) 20%,
-    rgba(205,133,63,0.3) 50%,
-    rgba(255,255,255,0.1) 80%,
+    rgba(255,255,255,0.05) 10%,
+    rgba(255,255,255,0.15) 25%,
+    rgba(205,133,63,0.4) 45%,
+    rgba(255,248,220,0.6) 50%,
+    rgba(205,133,63,0.4) 55%,
+    rgba(255,255,255,0.15) 75%,
+    rgba(255,255,255,0.05) 90%,
     transparent 100%);
+    
+  /* 反光条的立体效果 */
+  box-shadow: 
+    0 0 4px rgba(255,255,255,0.3),
+    inset 0 1px 2px rgba(255,255,255,0.4),
+    inset 0 -1px 2px rgba(0,0,0,0.2);
 }
 
 .pot-left, .pot-right {
@@ -474,84 +553,201 @@ body {
   }
 }
 
-/* 锅中的菜品 - 更逼真的食材效果 */
+/* 锅中的菜品 - 超逼真的食材烹饪效果 */
 .dish-in-pot {
-  background: rgba(255,255,255,0.95);
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  margin: 3px;
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,248,240,0.95) 100%),
+    rgba(255,255,255,0.9);
+  color: #2c1810;
+  padding: 6px 12px;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  margin: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.15);
-  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(212,105,26,0.2);
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
   
-  /* 食材在汤中的真实效果 */
+  /* 食材在汤中的超真实效果 */
   box-shadow: 
-    0 2px 8px rgba(0,0,0,0.2),
-    inset 0 1px 2px rgba(255,255,255,0.8),
-    0 0 10px rgba(255,255,255,0.3);
+    /* 主体阴影 */
+    0 3px 12px rgba(0,0,0,0.25),
+    0 1px 4px rgba(0,0,0,0.15),
+    /* 内部高光 */
+    inset 0 1px 3px rgba(255,255,255,0.9),
+    inset 0 -1px 2px rgba(0,0,0,0.05),
+    /* 汤中反光 */
+    0 0 15px rgba(255,255,255,0.4),
+    0 0 8px rgba(255,248,240,0.3);
     
-  animation: float 2.5s ease-in-out infinite, cookingBubble 1.8s ease-in-out infinite;
+  animation: 
+    float 3s ease-in-out infinite, 
+    cookingBubble 2.2s ease-in-out infinite,
+    steamEffect 4s ease-in-out infinite;
+}
+
+/* 食材表面的烹饪光泽 */
+.dish-in-pot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255,255,255,0.6), 
+    transparent);
+  transition: left 0.8s ease;
+}
+
+.dish-in-pot:hover::before {
+  left: 100%;
 }
 
 .dish-in-pot:hover {
-  transform: scale(1.15) translateY(-2px);
-  background: rgba(255,255,255,1);
+  transform: scale(1.2) translateY(-4px) rotate(2deg);
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,248,240,0.98) 100%),
+    rgba(255,255,255,0.95);
+  border-color: rgba(255,140,42,0.4);
   box-shadow: 
-    0 4px 15px rgba(0,0,0,0.3),
-    inset 0 1px 3px rgba(255,255,255,0.9),
-    0 0 20px rgba(255,255,255,0.5);
+    /* 悬停阴影增强 */
+    0 6px 25px rgba(0,0,0,0.35),
+    0 3px 8px rgba(0,0,0,0.2),
+    /* 内部高光增强 */
+    inset 0 2px 4px rgba(255,255,255,1),
+    inset 0 -1px 3px rgba(0,0,0,0.08),
+    /* 汤中反光增强 */
+    0 0 25px rgba(255,255,255,0.6),
+    0 0 15px rgba(255,248,240,0.5),
+    /* 热气效果 */
+    0 -5px 20px rgba(255,255,255,0.3);
 }
 
-/* 食材漂浮动画 - 模拟在汤中的自然漂浮 */
+/* 食材漂浮动画 - 模拟在汤中的自然漂浮和翻滚 */
 @keyframes float {
   0%, 100% { 
-    transform: translateY(0px) rotate(0deg); 
+    transform: translateY(0px) rotate(0deg) scale(1); 
   }
-  33% { 
-    transform: translateY(-4px) rotate(1deg); 
+  25% { 
+    transform: translateY(-3px) rotate(1.5deg) scale(1.02); 
   }
-  66% { 
-    transform: translateY(-2px) rotate(-0.5deg); 
+  50% { 
+    transform: translateY(-6px) rotate(0deg) scale(0.98); 
+  }
+  75% { 
+    transform: translateY(-2px) rotate(-1deg) scale(1.01); 
   }
 }
 
-/* 烹饪气泡效果 - 食材周围的小气泡 */
+/* 烹饪气泡效果 - 食材周围的沸腾气泡 */
 @keyframes cookingBubble {
   0%, 100% { 
     box-shadow: 
-      0 2px 8px rgba(0,0,0,0.2),
-      inset 0 1px 2px rgba(255,255,255,0.8),
-      0 0 10px rgba(255,255,255,0.3);
-  }
-  50% { 
-    box-shadow: 
       0 3px 12px rgba(0,0,0,0.25),
+      0 1px 4px rgba(0,0,0,0.15),
       inset 0 1px 3px rgba(255,255,255,0.9),
+      inset 0 -1px 2px rgba(0,0,0,0.05),
       0 0 15px rgba(255,255,255,0.4),
-      0 0 5px rgba(255,255,255,0.6);
+      0 0 8px rgba(255,248,240,0.3);
+  }
+  33% { 
+    box-shadow: 
+      0 4px 16px rgba(0,0,0,0.3),
+      0 2px 6px rgba(0,0,0,0.2),
+      inset 0 2px 4px rgba(255,255,255,1),
+      inset 0 -1px 3px rgba(0,0,0,0.08),
+      0 0 20px rgba(255,255,255,0.5),
+      0 0 12px rgba(255,248,240,0.4),
+      0 0 6px rgba(255,255,255,0.7);
+  }
+  66% { 
+    box-shadow: 
+      0 2px 10px rgba(0,0,0,0.2),
+      0 1px 3px rgba(0,0,0,0.1),
+      inset 0 1px 2px rgba(255,255,255,0.85),
+      inset 0 -1px 1px rgba(0,0,0,0.03),
+      0 0 12px rgba(255,255,255,0.35),
+      0 0 6px rgba(255,248,240,0.25);
   }
 }
 
-/* 座位 */
+/* 蒸汽效果 - 食材的热气 */
+@keyframes steamEffect {
+  0%, 100% { 
+    filter: brightness(1) contrast(1);
+  }
+  25% { 
+    filter: brightness(1.05) contrast(1.02);
+  }
+  50% { 
+    filter: brightness(1.1) contrast(1.05);
+  }
+  75% { 
+    filter: brightness(1.03) contrast(1.01);
+  }
+}
+
+/* 座位 - 逼真的木质椅子效果 */
 .seat {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
-  border: 3px solid #8B4513;
-  background: rgba(139,69,19,0.3);
+  border: 4px solid;
+  border-image: linear-gradient(45deg, 
+    #654321 0%, 
+    #8B4513 25%, 
+    #A0522D 50%, 
+    #8B4513 75%, 
+    #654321 100%) 1;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(160,82,45,0.4) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(139,69,19,0.3) 0%, transparent 40%),
+    linear-gradient(135deg, 
+      rgba(139,69,19,0.4) 0%, 
+      rgba(160,82,45,0.3) 50%, 
+      rgba(139,69,19,0.4) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.3),
+    inset 0 2px 4px rgba(255,255,255,0.1),
+    inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+
+.seat:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 20px rgba(0,0,0,0.4),
+    inset 0 3px 6px rgba(255,255,255,0.15),
+    inset 0 -3px 6px rgba(0,0,0,0.25);
 }
 
 .seat.occupied {
-  background: rgba(212,105,26,0.6);
-  border-color: #d4691a;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255,140,42,0.5) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(212,105,26,0.4) 0%, transparent 40%),
+    linear-gradient(135deg, 
+      rgba(212,105,26,0.6) 0%, 
+      rgba(255,140,42,0.4) 50%, 
+      rgba(212,105,26,0.6) 100%);
+  border-image: linear-gradient(45deg, 
+    #d4691a 0%, 
+    #ff8c42 25%, 
+    #ffb366 50%, 
+    #ff8c42 75%, 
+    #d4691a 100%) 1;
+  box-shadow: 
+    0 5px 20px rgba(212,105,26,0.4),
+    inset 0 2px 4px rgba(255,255,255,0.2),
+    inset 0 -2px 4px rgba(0,0,0,0.15),
+    0 0 15px rgba(255,140,42,0.3);
 }
 
 .seat-0 { top: 0; left: 50%; transform: translateX(-50%); }
@@ -639,123 +835,207 @@ body {
   transform: translateY(-2px);
 }
 
-/* 菜单样式 */
+/* 菜单样式 - 优化布局和视觉效果 */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0; 
+    backdrop-filter: blur(0px);
+  }
+  to { 
+    opacity: 1; 
+    backdrop-filter: blur(8px);
+  }
 }
 
 .menu-container {
-  background: linear-gradient(135deg, #3d2317 0%, #2c1810 100%);
-  border-radius: 15px;
-  padding: 20px;
-  max-width: 80%;
-  max-height: 80%;
+  background: 
+    linear-gradient(135deg, rgba(61,35,23,0.95) 0%, rgba(44,24,16,0.95) 100%),
+    radial-gradient(circle at 20% 30%, rgba(212,105,26,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,140,42,0.08) 0%, transparent 50%);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 85vh;
   overflow-y: auto;
-  border: 2px solid #d4691a;
-  animation: slideIn 0.3s ease;
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #d4691a, #ff8c42, #d4691a) 1;
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 25px 80px rgba(0,0,0,0.6),
+    0 15px 40px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.2);
 }
 
 @keyframes slideIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from { 
+    transform: scale(0.85) translateY(30px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1) translateY(0); 
+    opacity: 1; 
+  }
 }
 
 .menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #d4691a;
-  padding-bottom: 10px;
+  margin-bottom: 25px;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(90deg, transparent, #d4691a, #ff8c42, #d4691a, transparent) 1;
+  padding-bottom: 15px;
 }
 
 .menu-header h2 {
-  color: #d4691a;
-  font-size: 1.5rem;
+  color: #ff8c42;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  background: linear-gradient(45deg, #d4691a, #ff8c42, #ffb366);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .close-btn {
-  background: none;
-  border: none;
-  color: #d4691a;
-  font-size: 2rem;
+  background: rgba(212,105,26,0.2);
+  border: 2px solid #d4691a;
+  color: #ff8c42;
+  font-size: 1.8rem;
   cursor: pointer;
-  padding: 0;
-  width: 30px;
-  height: 30px;
+  padding: 8px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .close-btn:hover {
-  color: #ff8c42;
+  background: rgba(255,140,42,0.3);
+  color: #ffb366;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 5px 20px rgba(212,105,26,0.4);
 }
 
 .menu-categories {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .category h3 {
   color: #ff8c42;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  padding: 8px 15px;
+  background: rgba(212,105,26,0.15);
+  border-radius: 25px;
+  border: 1px solid rgba(212,105,26,0.3);
+  display: inline-block;
+  width: fit-content;
 }
 
 .dishes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 10px 0;
 }
 
 .dish-item {
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 15px;
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.08) 100%),
+    rgba(212,105,26,0.05);
+  border-radius: 15px;
+  padding: 20px 15px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(212,105,26,0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(212,105,26,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.dish-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.dish-item:hover::before {
+  left: 100%;
 }
 
 .dish-item:hover {
-  background: rgba(212,105,26,0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(212,105,26,0.2);
+  background: 
+    linear-gradient(135deg, rgba(212,105,26,0.25) 0%, rgba(255,140,42,0.2) 100%),
+    rgba(212,105,26,0.1);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 10px 30px rgba(212,105,26,0.3),
+    0 5px 15px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  border-color: rgba(255,140,42,0.5);
 }
 
 .dish-image {
-  font-size: 2rem;
-  margin-bottom: 8px;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.dish-item:hover .dish-image {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .dish-name {
   font-weight: bold;
-  margin-bottom: 5px;
-  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  line-height: 1.3;
 }
 
 .dish-price {
   color: #ff8c42;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  background: rgba(212,105,26,0.2);
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  border: 1px solid rgba(212,105,26,0.3);
 }
 
 /* 连接状态 */
@@ -771,84 +1051,96 @@ body {
   z-index: 1001;
 }
 
-/* 响应式设计 */
+/* 响应式设计 - 优化移动端体验 */
 @media (max-width: 768px) {
   .table-container {
-    width: 90vw;
-    height: 90vw;
-    max-width: 500px;
-    max-height: 500px;
+    width: 95vw;
+    height: 95vw;
+    max-width: 450px;
+    max-height: 450px;
   }
   
   .hotpot {
-    width: 250px;
-    height: 160px;
+    width: 300px;
+    height: 200px;
+    border-width: 18px;
+  }
+  
+  .hotpot::before {
+    width: 6px;
+    height: 85%;
+  }
+  
+  .hotpot::after {
+    width: 4px;
+    height: 75%;
   }
   
   .seat {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
+    font-size: 0.75rem;
   }
   
   .join-form input {
-    width: 250px;
-  }
-  
-  .menu-container {
-    max-width: 95%;
-    max-height: 90%;
-  }
-  
-  .dishes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
-  }
-  
-  .quick-chat {
-    max-width: 95%;
-  }
-  
-  .chat-btn {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-}/* 响
-应式设计 */
-@media (max-width: 768px) {
-  .table-container {
-    width: 90vw;
-    height: 90vw;
-    max-width: 500px;
-    max-height: 500px;
-  }
-  
-  .hotpot {
     width: 280px;
-    height: 180px;
-    border-width: 15px;
+    font-size: 1rem;
   }
   
-  .seat {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .join-form input {
-    width: 250px;
+  .join-screen h1 {
+    font-size: 2.5rem;
   }
   
   .menu-container {
-    max-width: 95%;
-    max-height: 90%;
+    width: 95%;
+    max-width: none;
+    max-height: 90vh;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .menu-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .close-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .category h3 {
+    font-size: 1.2rem;
+    padding: 6px 12px;
   }
   
   .dishes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 15px;
+  }
+  
+  .dish-item {
+    padding: 15px 10px;
+  }
+  
+  .dish-image {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  
+  .dish-name {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .dish-price {
+    font-size: 0.8rem;
+    padding: 3px 6px;
   }
   
   .quick-chat {
     max-width: 95%;
+    bottom: 15px;
   }
   
   .chat-btn {
@@ -857,32 +1149,122 @@ body {
   }
 }
 
-/* 增加火焰效果 - 让锅底看起来在加热 */
+@media (max-width: 480px) {
+  .hotpot {
+    width: 260px;
+    height: 170px;
+    border-width: 15px;
+  }
+  
+  .table-container {
+    width: 98vw;
+    height: 98vw;
+    max-width: 380px;
+    max-height: 380px;
+  }
+  
+  .menu-container {
+    padding: 15px;
+  }
+  
+  .dishes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+  }
+  
+  .dish-item {
+    padding: 12px 8px;
+  }
+  
+  .dish-image {
+    font-size: 1.8rem;
+  }
+  
+  .dish-name {
+    font-size: 0.85rem;
+  }
+  
+  .join-form input {
+    width: 250px;
+  }
+}
+
+/* 增加超逼真火焰效果 - 让锅底看起来在强烈加热 */
 .hotpot-table::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 350px;
-  height: 250px;
+  width: 420px;
+  height: 300px;
+  border-radius: 50%;
+  background: 
+    /* 火焰核心 */
+    radial-gradient(ellipse at center, 
+      rgba(255,100,0,0.2) 0%, 
+      rgba(255,150,50,0.15) 20%,
+      rgba(255,200,100,0.1) 40%, 
+      rgba(255,220,150,0.05) 60%,
+      transparent 80%),
+    /* 外层火光 */
+    radial-gradient(ellipse at 30% 70%, 
+      rgba(255,69,0,0.15) 0%, 
+      transparent 50%),
+    radial-gradient(ellipse at 70% 30%, 
+      rgba(255,140,0,0.12) 0%, 
+      transparent 45%);
+  animation: fireGlow 2.5s ease-in-out infinite alternate, fireFlicker 1.8s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+/* 添加第二层火焰效果 */
+.hotpot-table::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 260px;
   border-radius: 50%;
   background: 
     radial-gradient(ellipse at center, 
-      rgba(255,100,0,0.1) 0%, 
-      rgba(255,150,50,0.05) 30%, 
+      rgba(255,140,0,0.08) 0%, 
+      rgba(255,180,80,0.06) 30%,
       transparent 60%);
-  animation: fireGlow 3s ease-in-out infinite alternate;
-  z-index: -1;
+  animation: fireGlow 3.2s ease-in-out infinite alternate-reverse, fireFlicker 2.1s ease-in-out infinite reverse;
+  z-index: -2;
+  filter: blur(2px);
 }
 
 @keyframes fireGlow {
   0% { 
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0.4;
   }
   100% { 
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes fireFlicker {
+  0%, 100% { 
     opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  25% { 
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  50% { 
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+  75% { 
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.08);
   }
 }
