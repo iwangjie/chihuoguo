@@ -724,7 +724,7 @@ const HotPotGame = {
       if (!this.playerName.trim()) return;
       
       this.connectionStatus = 'connecting';
-      this.playerId = 'player_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      this.playerId = 'player_' + Date.now() + '_' + Math.random().toString(36).substring(2, 11);
       
       this.wsService.on('connected', () => {
         this.connectionStatus = 'connected';
@@ -961,12 +961,16 @@ const DishMenu = {
 // 注册组件并创建应用
 const { createApp } = Vue;
 
-createApp({
+const app = createApp({
   components: {
-    HotPotGame,
-    HotPotTable,
-    DishMenu
+    'hot-pot-game': HotPotGame
   }
-}).mount('#app');
+});
+
+// 全局注册组件
+app.component('hot-pot-table', HotPotTable);
+app.component('dish-menu', DishMenu);
+
+app.mount('#app');
 `;
 }
