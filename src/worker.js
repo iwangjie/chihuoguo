@@ -590,7 +590,7 @@ body {
 }
 
 function getVueComponents() {
-  return \`
+  return `
 // WebSocket 服务
 class WebSocketService {
   constructor() {
@@ -968,5 +968,5 @@ createApp({
     DishMenu
   }
 }).mount('#app');
-\`;
+`;
 }
