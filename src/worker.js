@@ -3,48 +3,48 @@ import { HotPotTable } from './HotPotTable.js';
 export { HotPotTable };
 
 export default {
-  async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-    
-    // 处理静态文件请求
-    if (url.pathname === '/' || url.pathname === '/index.html') {
-      return new Response(getIndexHTML(), {
-        headers: { 'Content-Type': 'text/html' }
-      });
+    async fetch(request, env, ctx) {
+        const url = new URL(request.url);
+
+        // 处理静态文件请求
+        if (url.pathname === '/' || url.pathname === '/index.html') {
+            return new Response(getIndexHTML(), {
+                headers: { 'Content-Type': 'text/html' }
+            });
+        }
+
+        // 处理 WebSocket 连接请求
+        if (url.pathname.startsWith('/table/')) {
+            const tableId = url.pathname.split('/')[2];
+
+            if (!tableId) {
+                return new Response('Table ID required', { status: 400 });
+            }
+
+            // 获取或创建 Durable Object 实例
+            const id = env.HOTPOT_TABLE.idFromName(tableId);
+            const stub = env.HOTPOT_TABLE.get(id);
+
+            // 转发请求到 Durable Object
+            return stub.fetch(request);
+        }
+
+        // 处理 API 请求
+        if (url.pathname === '/api/tables') {
+            return new Response(JSON.stringify({
+                message: 'Available tables',
+                tables: ['table1', 'table2', 'table3']
+            }), {
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+        return new Response('Not found', { status: 404 });
     }
-    
-    // 处理 WebSocket 连接请求
-    if (url.pathname.startsWith('/table/')) {
-      const tableId = url.pathname.split('/')[2];
-      
-      if (!tableId) {
-        return new Response('Table ID required', { status: 400 });
-      }
-      
-      // 获取或创建 Durable Object 实例
-      const id = env.HOTPOT_TABLE.idFromName(tableId);
-      const stub = env.HOTPOT_TABLE.get(id);
-      
-      // 转发请求到 Durable Object
-      return stub.fetch(request);
-    }
-    
-    // 处理 API 请求
-    if (url.pathname === '/api/tables') {
-      return new Response(JSON.stringify({
-        message: 'Available tables',
-        tables: ['table1', 'table2', 'table3']
-      }), {
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-    
-    return new Response('Not found', { status: 404 });
-  }
 };
 
 function getIndexHTML() {
-  return `<!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -67,7 +67,7 @@ function getIndexHTML() {
 }
 
 function getStyles() {
-  return `
+    return `
 /* 全局样式 */
 * {
   margin: 0;
@@ -590,7 +590,7 @@ body {
 }
 
 function getVueComponents() {
-  return `
+    return `
 // WebSocket 服务
 class WebSocketService {
   constructor() {

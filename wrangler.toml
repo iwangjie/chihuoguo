@@ -1,4 +1,4 @@
-name = "hotpot-game"
+name = "chihuoguo"
 main = "src/worker.js"
 compatibility_date = "2024-01-01"
 
@@ -9,7 +9,7 @@ bindings = [
 
 [[migrations]]
 tag = "v1"
-new_classes = ["HotPotTable"]
+new_sqlite_classes = ["HotPotTable"]
 
 [env.production]
 name = "hotpot-game-prod"
