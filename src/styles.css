@@ -123,83 +123,168 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 200px;
+  width: 320px;
+  height: 220px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   transition: all 0.3s ease;
-  /* 更逼真的锅边 - 厚重的铸铁锅 */
-  border: 16px solid;
+  
+  /* 真实的铸铁锅边缘 - 厚重质感 */
+  border: 20px solid;
   border-image: linear-gradient(45deg, 
-    #2c1810 0%,     /* 深棕色阴影 */
-    #654321 15%,    /* 铁锈色 */
-    #8B4513 35%,    /* 主体棕色 */
-    #A0522D 50%,    /* 亮部 */
-    #CD853F 65%,    /* 金属反光 */
-    #8B4513 80%,    /* 回到主体色 */
-    #654321 95%,    /* 边缘阴影 */
-    #2c1810 100%    /* 深色收尾 */
+    #1a1a1a 0%,     /* 深黑阴影 */
+    #2d2d2d 8%,     /* 铁色基调 */
+    #4a4a4a 16%,    /* 铁锈过渡 */
+    #654321 25%,    /* 铁锈色 */
+    #8B4513 40%,    /* 主体棕色 */
+    #A0522D 50%,    /* 中间亮部 */
+    #CD853F 60%,    /* 金属反光 */
+    #8B4513 75%,    /* 回到主体色 */
+    #654321 84%,    /* 边缘铁锈 */
+    #4a4a4a 92%,    /* 边缘阴影 */
+    #1a1a1a 100%    /* 深色收尾 */
   ) 1;
-  /* 增强的立体阴影效果 */
+  
+  /* 超逼真的立体阴影系统 */
   box-shadow: 
-    /* 锅内深度 - 多层内阴影 */
-    inset 0 0 40px rgba(0,0,0,0.8),
-    inset 0 -15px 30px rgba(0,0,0,0.6),
-    inset 0 15px 20px rgba(255,255,255,0.05),
-    /* 锅底厚度感 */
-    inset 0 -5px 10px rgba(139,69,19,0.4),
-    /* 桌面投影 - 更真实 */
-    0 20px 60px rgba(0,0,0,0.7),
-    0 8px 25px rgba(0,0,0,0.5),
-    /* 金属光泽 */
-    0 -8px 20px rgba(255,255,255,0.08),
-    /* 火光映射 */
-    0 0 80px rgba(255,100,0,0.25),
-    0 0 40px rgba(255,150,50,0.15);
-  /* 铸铁锅质感 */
+    /* 锅内深度层次 - 模拟真实深度 */
+    inset 0 0 50px rgba(0,0,0,0.9),
+    inset 0 -20px 40px rgba(0,0,0,0.7),
+    inset 0 20px 30px rgba(255,255,255,0.03),
+    inset 0 -8px 15px rgba(139,69,19,0.5),
+    
+    /* 锅底厚重感 */
+    inset 0 -3px 8px rgba(0,0,0,0.8),
+    inset 0 3px 6px rgba(255,255,255,0.1),
+    
+    /* 桌面真实投影 */
+    0 25px 80px rgba(0,0,0,0.8),
+    0 15px 40px rgba(0,0,0,0.6),
+    0 8px 20px rgba(0,0,0,0.4),
+    
+    /* 金属质感光泽 */
+    0 -10px 25px rgba(255,255,255,0.06),
+    0 -5px 15px rgba(205,133,63,0.1),
+    
+    /* 火光环境映射 */
+    0 0 100px rgba(255,100,0,0.3),
+    0 0 60px rgba(255,150,50,0.2),
+    0 0 30px rgba(255,200,100,0.1);
+  
+  /* 铸铁锅表面纹理 */
   background: 
-    /* 锅底纹理 */
-    radial-gradient(ellipse at 20% 30%, rgba(160,82,45,0.3) 0%, transparent 40%),
-    radial-gradient(ellipse at 80% 70%, rgba(139,69,19,0.4) 0%, transparent 35%),
-    /* 主体渐变 */
+    /* 锅底使用痕迹 */
+    radial-gradient(ellipse at 15% 25%, rgba(160,82,45,0.4) 0%, transparent 35%),
+    radial-gradient(ellipse at 85% 75%, rgba(139,69,19,0.5) 0%, transparent 30%),
+    radial-gradient(ellipse at 60% 40%, rgba(101,67,33,0.3) 0%, transparent 45%),
+    
+    /* 金属氧化层 */
+    radial-gradient(ellipse at 30% 70%, rgba(205,133,63,0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(160,82,45,0.3) 0%, transparent 40%),
+    
+    /* 主体金属渐变 */
     linear-gradient(135deg, 
-      rgba(101,67,33,0.4) 0%, 
-      rgba(139,69,19,0.3) 25%,
-      rgba(160,82,45,0.2) 50%, 
-      rgba(139,69,19,0.3) 75%,
-      rgba(101,67,33,0.4) 100%);
+      rgba(80,50,25,0.6) 0%, 
+      rgba(101,67,33,0.5) 15%,
+      rgba(139,69,19,0.4) 35%,
+      rgba(160,82,45,0.3) 50%, 
+      rgba(139,69,19,0.4) 65%,
+      rgba(101,67,33,0.5) 85%,
+      rgba(80,50,25,0.6) 100%),
+    
+    /* 底色 */
+    #2c1810;
 }
 
 .hotpot:hover {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.03);
+  
+  /* 悬停时的增强光效 */
   box-shadow: 
-    inset 0 0 30px rgba(0,0,0,0.7),
-    inset 0 -10px 20px rgba(0,0,0,0.4),
+    /* 锅内深度增强 */
+    inset 0 0 60px rgba(0,0,0,0.95),
+    inset 0 -25px 50px rgba(0,0,0,0.8),
+    inset 0 25px 35px rgba(255,255,255,0.05),
+    inset 0 -10px 20px rgba(139,69,19,0.6),
+    inset 0 -5px 12px rgba(0,0,0,0.9),
+    inset 0 5px 8px rgba(255,255,255,0.15),
+    
+    /* 桌面投影增强 */
+    0 30px 100px rgba(0,0,0,0.9),
     0 20px 50px rgba(0,0,0,0.7),
-    0 -5px 20px rgba(255,255,255,0.15),
-    0 0 60px rgba(255,100,0,0.5);
+    0 12px 25px rgba(0,0,0,0.5),
+    
+    /* 金属光泽增强 */
+    0 -12px 30px rgba(255,255,255,0.08),
+    0 -8px 20px rgba(205,133,63,0.15),
+    
+    /* 火光效果增强 */
+    0 0 120px rgba(255,100,0,0.4),
+    0 0 80px rgba(255,150,50,0.3),
+    0 0 40px rgba(255,200,100,0.2);
 }
 
-/* 锅中间的分隔线 */
+/* 锅中间的分隔线 - 真实的金属隔板 */
 .hotpot::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 2px;
-  height: 80%;
+  width: 6px;
+  height: 85%;
+  border-radius: 3px;
+  z-index: 10;
+  
+  /* 金属隔板质感 */
   background: linear-gradient(to bottom,
     transparent 0%,
-    #654321 10%,
-    #8B4513 50%,
-    #654321 90%,
+    rgba(160,82,45,0.3) 5%,
+    #654321 15%,
+    #8B4513 25%,
+    #A0522D 40%,
+    #CD853F 50%,
+    #A0522D 60%,
+    #8B4513 75%,
+    #654321 85%,
+    rgba(160,82,45,0.3) 95%,
     transparent 100%);
-  z-index: 10;
+    
+  /* 立体金属效果 */
   box-shadow: 
-    -1px 0 2px rgba(0,0,0,0.5),
-    1px 0 2px rgba(255,255,255,0.1);
+    /* 主体阴影 */
+    -2px 0 4px rgba(0,0,0,0.6),
+    2px 0 4px rgba(0,0,0,0.6),
+    /* 金属光泽 */
+    -1px 0 2px rgba(255,255,255,0.15),
+    1px 0 2px rgba(255,255,255,0.15),
+    /* 深度感 */
+    0 0 8px rgba(0,0,0,0.4),
+    /* 内部阴影 */
+    inset -1px 0 2px rgba(0,0,0,0.3),
+    inset 1px 0 2px rgba(0,0,0,0.3);
+}
+
+/* 增加隔板的金属纹理 */
+.hotpot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 75%;
+  border-radius: 2px;
+  z-index: 11;
+  
+  /* 金属表面反光 */
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(255,255,255,0.1) 20%,
+    rgba(205,133,63,0.3) 50%,
+    rgba(255,255,255,0.1) 80%,
+    transparent 100%);
 }
 
 .pot-left, .pot-right {
@@ -214,113 +299,240 @@ body {
 }
 
 .pot-left.spicy {
+  /* 超逼真的麻辣汤底 */
   background: 
-    /* 汤底层次 */
-    radial-gradient(ellipse at 30% 30%, rgba(255,200,0,0.3) 0%, transparent 40%),
-    radial-gradient(ellipse at 70% 60%, rgba(255,100,0,0.4) 0%, transparent 50%),
-    radial-gradient(circle at center, #ff6666 0%, #ff4444 30%, #cc0000 70%, #990000 100%);
-  animation: spicyBubble 1.5s infinite, spicyGlow 3s ease-in-out infinite alternate;
-  /* 辣椒油光泽 */
+    /* 辣椒油层 - 表面浮油 */
+    radial-gradient(ellipse at 25% 20%, rgba(255,140,0,0.8) 0%, transparent 25%),
+    radial-gradient(ellipse at 75% 30%, rgba(255,100,0,0.7) 0%, transparent 30%),
+    radial-gradient(ellipse at 40% 70%, rgba(255,69,0,0.6) 0%, transparent 35%),
+    radial-gradient(ellipse at 80% 80%, rgba(255,140,0,0.5) 0%, transparent 20%),
+    
+    /* 花椒和香料颗粒 */
+    radial-gradient(circle at 20% 40%, rgba(139,69,19,0.9) 0%, transparent 3%),
+    radial-gradient(circle at 60% 25%, rgba(160,82,45,0.8) 0%, transparent 2%),
+    radial-gradient(circle at 35% 80%, rgba(101,67,33,0.9) 0%, transparent 2.5%),
+    radial-gradient(circle at 85% 60%, rgba(139,69,19,0.7) 0%, transparent 3%),
+    
+    /* 辣椒片效果 */
+    radial-gradient(ellipse at 15% 60%, rgba(220,20,60,0.8) 0%, transparent 8%),
+    radial-gradient(ellipse at 70% 45%, rgba(255,0,0,0.7) 0%, transparent 6%),
+    radial-gradient(ellipse at 45% 15%, rgba(178,34,34,0.9) 0%, transparent 7%),
+    
+    /* 汤底主体颜色 - 深红麻辣 */
+    radial-gradient(circle at center, 
+      #ff4500 0%, 
+      #ff6347 15%, 
+      #dc143c 35%, 
+      #b22222 55%, 
+      #8b0000 75%, 
+      #660000 90%, 
+      #4d0000 100%);
+      
+  animation: spicyBubble 1.2s infinite, spicyGlow 2.5s ease-in-out infinite alternate;
+  
+  /* 辣椒油的光泽和深度 */
   box-shadow: 
-    inset 0 0 20px rgba(255,100,0,0.4),
-    inset 0 -5px 15px rgba(0,0,0,0.3);
+    /* 油光反射 */
+    inset 0 0 30px rgba(255,140,0,0.6),
+    inset 0 -8px 20px rgba(0,0,0,0.5),
+    inset 0 8px 15px rgba(255,100,0,0.3),
+    /* 汤底深度 */
+    inset 0 0 50px rgba(139,0,0,0.4);
 }
 
 .pot-right.mild {
+  /* 超逼真的清汤汤底 */
   background: 
-    /* 清汤层次 */
-    radial-gradient(ellipse at 40% 20%, rgba(255,255,255,0.6) 0%, transparent 30%),
-    radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.3) 0%, transparent 40%),
-    radial-gradient(circle at center, #ffffff 0%, #f5f5f5 30%, #e0e0e0 70%, #cccccc 100%);
-  animation: mildBubble 2s infinite, mildShimmer 4s ease-in-out infinite alternate;
-  /* 清汤光泽 */
+    /* 汤面油花 - 鸡汤的天然油脂 */
+    radial-gradient(ellipse at 30% 25%, rgba(255,215,0,0.4) 0%, transparent 15%),
+    radial-gradient(ellipse at 70% 40%, rgba(255,228,181,0.5) 0%, transparent 20%),
+    radial-gradient(ellipse at 45% 70%, rgba(255,235,205,0.3) 0%, transparent 25%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,218,185,0.4) 0%, transparent 18%),
+    
+    /* 汤中的细小气泡 */
+    radial-gradient(circle at 25% 50%, rgba(255,255,255,0.8) 0%, transparent 2%),
+    radial-gradient(circle at 65% 30%, rgba(255,255,255,0.7) 0%, transparent 1.5%),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.9) 0%, transparent 2.5%),
+    radial-gradient(circle at 85% 65%, rgba(255,255,255,0.6) 0%, transparent 1.8%),
+    
+    /* 汤底沉淀物 - 骨汤的自然色泽 */
+    radial-gradient(ellipse at 20% 85%, rgba(245,245,220,0.3) 0%, transparent 30%),
+    radial-gradient(ellipse at 75% 90%, rgba(255,248,220,0.4) 0%, transparent 25%),
+    
+    /* 清汤主体 - 温润的骨汤色 */
+    radial-gradient(circle at center, 
+      #fffef7 0%, 
+      #fefcf0 20%, 
+      #fdf8e8 40%, 
+      #fcf4e0 60%, 
+      #faf0d8 80%, 
+      #f8ecd0 100%);
+      
+  animation: mildBubble 1.8s infinite, mildShimmer 3.5s ease-in-out infinite alternate;
+  
+  /* 清汤的透明质感和温润光泽 */
   box-shadow: 
-    inset 0 0 15px rgba(255,255,255,0.5),
-    inset 0 -5px 10px rgba(0,0,0,0.1);
+    /* 汤面反光 */
+    inset 0 0 25px rgba(255,255,255,0.7),
+    inset 0 -6px 15px rgba(0,0,0,0.08),
+    inset 0 6px 12px rgba(255,248,220,0.5),
+    /* 汤底透明感 */
+    inset 0 0 40px rgba(255,235,205,0.3);
 }
 
-/* 辣汤气泡动画 */
+/* 辣汤沸腾气泡动画 - 更真实的沸腾效果 */
 @keyframes spicyBubble {
-  0%, 100% { 
+  0% { 
     transform: scale(1);
-    background-size: 100% 100%, 100% 100%, 100% 100%;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   }
-  33% { 
-    transform: scale(1.01);
-    background-size: 110% 110%, 90% 90%, 100% 100%;
+  25% { 
+    transform: scale(1.008);
+    background-size: 105% 105%, 95% 95%, 110% 110%, 90% 90%, 102% 102%, 98% 98%, 106% 106%, 94% 94%, 103% 103%, 97% 97%, 100% 100%;
   }
-  66% { 
-    transform: scale(0.99);
-    background-size: 90% 90%, 110% 110%, 100% 100%;
+  50% { 
+    transform: scale(0.995);
+    background-size: 90% 90%, 110% 110%, 95% 95%, 105% 105%, 98% 98%, 102% 102%, 92% 92%, 108% 108%, 97% 97%, 103% 103%, 100% 100%;
+  }
+  75% { 
+    transform: scale(1.012);
+    background-size: 108% 108%, 92% 92%, 103% 103%, 97% 97%, 105% 105%, 95% 95%, 109% 109%, 91% 91%, 101% 101%, 99% 99%, 100% 100%;
+  }
+  100% { 
+    transform: scale(1);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   }
 }
 
-/* 辣汤发光效果 */
+/* 辣汤火光映射效果 */
 @keyframes spicyGlow {
   0% { 
     box-shadow: 
-      inset 0 0 20px rgba(255,100,0,0.4),
-      inset 0 -5px 15px rgba(0,0,0,0.3);
+      inset 0 0 30px rgba(255,140,0,0.6),
+      inset 0 -8px 20px rgba(0,0,0,0.5),
+      inset 0 8px 15px rgba(255,100,0,0.3),
+      inset 0 0 50px rgba(139,0,0,0.4);
+  }
+  50% { 
+    box-shadow: 
+      inset 0 0 40px rgba(255,140,0,0.8),
+      inset 0 -10px 25px rgba(0,0,0,0.6),
+      inset 0 10px 20px rgba(255,100,0,0.5),
+      inset 0 0 60px rgba(139,0,0,0.6);
   }
   100% { 
     box-shadow: 
-      inset 0 0 30px rgba(255,100,0,0.6),
-      inset 0 -5px 20px rgba(0,0,0,0.4);
+      inset 0 0 35px rgba(255,140,0,0.7),
+      inset 0 -9px 22px rgba(0,0,0,0.55),
+      inset 0 9px 18px rgba(255,100,0,0.4),
+      inset 0 0 55px rgba(139,0,0,0.5);
   }
 }
 
-/* 清汤气泡动画 */
+/* 清汤温和沸腾动画 - 骨汤的轻柔沸腾 */
 @keyframes mildBubble {
-  0%, 100% { 
+  0% { 
     transform: scale(1);
-    background-size: 100% 100%, 100% 100%, 100% 100%;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   }
-  33% { 
-    transform: scale(1.005);
-    background-size: 105% 105%, 95% 95%, 100% 100%;
+  30% { 
+    transform: scale(1.003);
+    background-size: 102% 102%, 98% 98%, 104% 104%, 96% 96%, 101% 101%, 99% 99%, 103% 103%, 97% 97%, 102% 102%, 98% 98%, 100% 100%;
   }
-  66% { 
-    transform: scale(0.995);
-    background-size: 95% 95%, 105% 105%, 100% 100%;
+  60% { 
+    transform: scale(0.998);
+    background-size: 98% 98%, 102% 102%, 96% 96%, 104% 104%, 99% 99%, 101% 101%, 97% 97%, 103% 103%, 98% 98%, 102% 102%, 100% 100%;
+  }
+  100% { 
+    transform: scale(1);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   }
 }
 
-/* 清汤微光效果 */
+/* 清汤温润光泽效果 */
 @keyframes mildShimmer {
   0% { 
     box-shadow: 
-      inset 0 0 15px rgba(255,255,255,0.5),
-      inset 0 -5px 10px rgba(0,0,0,0.1);
+      inset 0 0 25px rgba(255,255,255,0.7),
+      inset 0 -6px 15px rgba(0,0,0,0.08),
+      inset 0 6px 12px rgba(255,248,220,0.5),
+      inset 0 0 40px rgba(255,235,205,0.3);
+  }
+  50% { 
+    box-shadow: 
+      inset 0 0 35px rgba(255,255,255,0.9),
+      inset 0 -8px 20px rgba(0,0,0,0.12),
+      inset 0 8px 16px rgba(255,248,220,0.7),
+      inset 0 0 50px rgba(255,235,205,0.5);
   }
   100% { 
     box-shadow: 
-      inset 0 0 25px rgba(255,255,255,0.7),
-      inset 0 -5px 15px rgba(0,0,0,0.15);
+      inset 0 0 30px rgba(255,255,255,0.8),
+      inset 0 -7px 18px rgba(0,0,0,0.10),
+      inset 0 7px 14px rgba(255,248,220,0.6),
+      inset 0 0 45px rgba(255,235,205,0.4);
   }
 }
 
-/* 锅中的菜品 */
+/* 锅中的菜品 - 更逼真的食材效果 */
 .dish-in-pot {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   color: #333;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  margin: 3px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.2);
-  animation: float 3s ease-in-out infinite;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-weight: 500;
+  
+  /* 食材在汤中的真实效果 */
+  box-shadow: 
+    0 2px 8px rgba(0,0,0,0.2),
+    inset 0 1px 2px rgba(255,255,255,0.8),
+    0 0 10px rgba(255,255,255,0.3);
+    
+  animation: float 2.5s ease-in-out infinite, cookingBubble 1.8s ease-in-out infinite;
 }
 
 .dish-in-pot:hover {
-  transform: scale(1.1);
+  transform: scale(1.15) translateY(-2px);
   background: rgba(255,255,255,1);
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.3),
+    inset 0 1px 3px rgba(255,255,255,0.9),
+    0 0 20px rgba(255,255,255,0.5);
 }
 
+/* 食材漂浮动画 - 模拟在汤中的自然漂浮 */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-3px); }
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  33% { 
+    transform: translateY(-4px) rotate(1deg); 
+  }
+  66% { 
+    transform: translateY(-2px) rotate(-0.5deg); 
+  }
+}
+
+/* 烹饪气泡效果 - 食材周围的小气泡 */
+@keyframes cookingBubble {
+  0%, 100% { 
+    box-shadow: 
+      0 2px 8px rgba(0,0,0,0.2),
+      inset 0 1px 2px rgba(255,255,255,0.8),
+      0 0 10px rgba(255,255,255,0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 3px 12px rgba(0,0,0,0.25),
+      inset 0 1px 3px rgba(255,255,255,0.9),
+      0 0 15px rgba(255,255,255,0.4),
+      0 0 5px rgba(255,255,255,0.6);
+  }
 }
 
 /* 座位 */
@@ -599,5 +811,78 @@ body {
   .chat-btn {
     padding: 6px 12px;
     font-size: 0.8rem;
+  }
+}/* 响
+应式设计 */
+@media (max-width: 768px) {
+  .table-container {
+    width: 90vw;
+    height: 90vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+  
+  .hotpot {
+    width: 280px;
+    height: 180px;
+    border-width: 15px;
+  }
+  
+  .seat {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .join-form input {
+    width: 250px;
+  }
+  
+  .menu-container {
+    max-width: 95%;
+    max-height: 90%;
+  }
+  
+  .dishes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  
+  .quick-chat {
+    max-width: 95%;
+  }
+  
+  .chat-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* 增加火焰效果 - 让锅底看起来在加热 */
+.hotpot-table::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 250px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(ellipse at center, 
+      rgba(255,100,0,0.1) 0%, 
+      rgba(255,150,50,0.05) 30%, 
+      transparent 60%);
+  animation: fireGlow 3s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes fireGlow {
+  0% { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.6;
   }
 }
