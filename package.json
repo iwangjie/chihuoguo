@@ -1,0 +1,31 @@
+{
+  "name": "hotpot-game",
+  "version": "1.0.0",
+  "description": "网页版模拟涮火锅游戏 - 基于 Cloudflare Workers + Durable Objects",
+  "main": "src/worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hotpot",
+    "game",
+    "multiplayer",
+    "cloudflare-workers",
+    "durable-objects",
+    "websocket",
+    "vue"
+  ],
+  "author": "Kiro AI Assistant",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

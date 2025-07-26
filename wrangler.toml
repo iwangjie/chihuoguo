@@ -1,0 +1,18 @@
+name = "hotpot-game"
+main = "src/worker.js"
+compatibility_date = "2024-01-01"
+
+[durable_objects]
+bindings = [
+  { name = "HOTPOT_TABLE", class_name = "HotPotTable" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["HotPotTable"]
+
+[env.production]
+name = "hotpot-game-prod"
+
+[env.staging]
+name = "hotpot-game-staging"
