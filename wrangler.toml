@@ -16,3 +16,8 @@ name = "hotpot-game-prod"
 
 [env.staging]
 name = "hotpot-game-staging"
+
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = true
+
