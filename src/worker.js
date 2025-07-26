@@ -602,7 +602,7 @@ class WebSocketService {
 
   connect(tableId) {
     const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsUrl = \`\${protocol}//\${location.host}/table/\${tableId}\`;
+    const wsUrl = protocol + '//' + location.host + '/table/' + tableId;
     
     this.ws = new WebSocket(wsUrl);
     
@@ -637,7 +637,7 @@ class WebSocketService {
     if (this.reconnectAttempts < this.maxReconnectAttempts) {
       this.reconnectAttempts++;
       setTimeout(() => {
-        console.log(\`尝试重连 (\${this.reconnectAttempts}/\${this.maxReconnectAttempts})\`);
+        console.log('尝试重连 (' + this.reconnectAttempts + '/' + this.maxReconnectAttempts + ')');
         this.connect(tableId);
       }, 2000 * this.reconnectAttempts);
     }
@@ -805,7 +805,7 @@ const HotPotTable = {
         
         <!-- 座位 -->
         <div v-for="(seat, index) in seats" :key="index" 
-             :class="['seat', \`seat-${index}\`, { occupied: seat.player }]">
+             :class="['seat', 'seat-' + index, { occupied: seat.player }]">
           <div v-if="seat.player" class="player-info">
             <div class="player-name">{{ seat.player.name }}</div>
             <div v-if="seat.player.message" class="chat-bubble">
@@ -867,7 +867,7 @@ const HotPotTable = {
       const opacity = 0.7 + (cookingProgress * 0.3);
       return {
         opacity,
-        transform: \`scale(\${0.8 + cookingProgress * 0.2})\`
+        transform: 'scale(' + (0.8 + cookingProgress * 0.2) + ')'
       };
     },
     
