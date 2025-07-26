@@ -1,4 +1,5 @@
 import { HotPotTable } from './HotPotTable.js';
+import stylesCSS from './styles.css';
 
 export { HotPotTable };
 
@@ -67,6 +68,7 @@ function getIndexHTML() {
 }
 
 function getStyles() {
+    // 读取优化后的 CSS 样式
     return `
 /* 全局样式 */
 * {
